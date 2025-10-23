@@ -21,3 +21,19 @@ fun validatePassword(password: String): Pair<Boolean, String>{
         else -> Pair(true, "")
     }
 }
+
+fun validateName (name: String): Pair<Boolean, String>{
+    return when{
+        name.isEmpty() -> Pair(false, "La contraseña es requerida")
+        name.length < 3 -> Pair(false, "La contraseña debe tener al menos 3 caracteres")
+        else -> Pair(true, "")
+    }
+}
+
+fun validateConfirmPassword (password: String, confirmPassword: String): Pair<Boolean, String>{
+    return when{
+        confirmPassword.isEmpty() -> Pair(false, "La contraseña es requerida")
+        confirmPassword != password -> Pair(false, "Las contraseñas no coinciden")
+        else -> Pair(true, "")
+    }
+}

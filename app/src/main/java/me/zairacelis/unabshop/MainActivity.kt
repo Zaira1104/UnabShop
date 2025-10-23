@@ -41,6 +41,10 @@ class MainActivity : ComponentActivity() {
                     composable (route = "register") {
                         RegisterScreen(onClickBack = {
                             navController.popBackStack()
+                        }, onSuccessfulRegister = {
+                            navController.navigate("home"){
+                                popUpTo(0)
+                            }
                         }
                         )
                     }
