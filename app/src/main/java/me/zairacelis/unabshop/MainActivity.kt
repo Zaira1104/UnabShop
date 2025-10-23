@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import me.zairacelis.unabshop.ui.theme.UnabShopTheme
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -21,28 +20,35 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val navController = rememberNavController()
-            val startDestination = "Login"
-            NavHost(
-                navController = navController,
-                startDestination = startDestination,
-                modifier = Modifier.fillMaxSize()
-            ) {
-                composable(route = "Login") {
-                    LoginScreen(onClickRegister = {
-                        navController.navigate("register")
-                    })
-                }
-                composable (route = "register") {
-                    RegisterScreen(onClickBack = {
-                        navController.popBackStack()
+                val navController = rememberNavController()
+                val startDestination = "Login"
+                NavHost(
+                    navController = navController,
+                    startDestination = startDestination,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    composable(route = "Login") {
+                        LoginScreen(onClickRegister = {
+                            navController.navigate("register")
+                        }, onSuccessfulLogin = {
+                            navController.navigate("home"){
+                                popUpTo("Login"){inclusive=true}
+                            }
+                        }
+
+                        )
                     }
-                    )
-                }
-                composable (route = "home") {
-                    HomeScreen()
+                    composable (route = "register") {
+                        RegisterScreen(onClickBack = {
+                            navController.popBackStack()
+                        }
+                        )
+                    }
+                    composable (route = "home") {
+                        HomeScreen()
+                    }
                 }
             }
+
         }
     }
-}

@@ -47,7 +47,9 @@ fun RegisterScreen(onClickBack :()->Unit = {}) {
                 title = { },
                 navigationIcon = {
                     IconButton(onClick =
-                    onClickBack) {
+                        onClickBack
+
+                    ) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Regresar",
@@ -68,7 +70,7 @@ fun RegisterScreen(onClickBack :()->Unit = {}) {
         ) {
             // Ícono de Usuario
             Image(
-                painter = painterResource(id = R.drawable.img_icon_unab ),
+                painter = painterResource(id = R.drawable.img_icon_unab),
                 contentDescription = "Usuario",
                 modifier = Modifier.size(150.dp)
             )
