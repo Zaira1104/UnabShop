@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "23203664605",
+    "project_id": "loginfirebase-7cb82",
+    "storage_bucket": "loginfirebase-7cb82.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23203664605:android:42d0bf04dbcf69f9dcc134",
+        "android_client_info": {
+          "package_name": "me.zairacelis.unabshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmhJEXIHy9bWCUUFiJHDIfqChu4_qWdOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
